@@ -7,7 +7,7 @@
   </a>
 </div>
 
-# Biblionx Libraskê (Processor)
+# Biblionx LSRD Processor
 
 *Adapted from [VLibras](https://www.vlibras.gov.br/) Libraskê Processor Core.*
 
@@ -72,8 +72,7 @@ make dev
 
 ## Contributors
 
-* Ewerton Moura - <emoura@lavid.ufpb.br>
-* Arnor Neto - <arnor.neto@lavid.ufpb.br>
+Originally developed by the Biblionx team.
 
 ## License
 
