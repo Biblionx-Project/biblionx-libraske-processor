@@ -60,9 +60,17 @@ class Worker:
 
             score = self.__score_eval.get_score(
                 results, video_id, frame_id)
-            
+            try:
+                score_float = float(score)
+            except (ValueError, TypeError):
+                score_float = 0.0
 
-            final_score = (int(score.split(".")[1][0:2]) + 50*2)//3 if score > 0 else 0
+            if score_float > 0:
+                score_str = f"{score_float:.2f}"
+                score_decimals = 100 if score_float >= 1.0 else (int(score_str.split(".")[1][:2]) if "." in score_str else 0)
+                final_score = (score_decimals + 50 * 2) // 3
+            else:
+                final_score = 0
 
             msg = {
                 "idGameSession": session_id,

@@ -2,6 +2,19 @@ import configparser
 import logging
 import os
 
+# Map BIBLIONX_* environment variables to standard names if set
+_ALIASES = {
+    "AMQP_HOST": "BIBLIONX_AMQP_HOST",
+    "AMQP_PORT": "BIBLIONX_AMQP_PORT",
+    "AMQP_USER": "BIBLIONX_AMQP_USER",
+    "AMQP_PASS": "BIBLIONX_AMQP_PASS",
+    "AMQP_PREFETCH_COUNT": "BIBLIONX_AMQP_PREFETCH_COUNT",
+    "RECEIVE_QUEUE": "BIBLIONX_RECEIVE_QUEUE",
+}
+for std_var, bib_var in _ALIASES.items():
+    if std_var not in os.environ and bib_var in os.environ:
+        os.environ[std_var] = os.environ[bib_var]
+
 _CONFIG_FILE = os.environ.get("CORE_CONFIG_FILE", "")
 _CONFIG = configparser.ConfigParser(os.environ)
 

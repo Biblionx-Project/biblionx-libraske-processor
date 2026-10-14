@@ -1,7 +1,7 @@
 CURR_DIR	:=	$(shell pwd)
 VENV_DIR	:=	$(CURR_DIR)/.venv
 PYTHON	:=	$(VENV_DIR)/bin/python
-UTIL_PYCACHE	:=	"$(CURR_DIR)/src/util/__pycache__"
+UTIL_PYCACHE	:=	"$(CURR_DIR)/src/utils/__pycache__"
 
 CORE_CONFIG_FILE	:=	"$(CURR_DIR)/src/config/settings.ini"
 DEV_CONFIG_FILE	:=	"$(CURR_DIR)/src/config/settings-dev.ini"

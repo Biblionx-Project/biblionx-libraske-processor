@@ -11,7 +11,7 @@ class MetaClass(type):
         if cls not in cls._instance:
             cls._instance[cls] = super(
                 MetaClass, cls).__call__(*args, **kwargs)
-            return cls._instance[cls]
+        return cls._instance[cls]
 
 
 class RabbitMqServerConfigure(metaclass=MetaClass):

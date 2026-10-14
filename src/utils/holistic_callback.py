@@ -27,7 +27,7 @@ class HolisticCallback():
         im64_bytes = base64.b64decode(frame_Image)
 
         im_arr = np.frombuffer(im64_bytes, dtype=np.uint8)
-        img = cv2.imdecode(im_arr, flags=cv2.COLOR_BGR2RGB)
+        img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
         mp_drawing = mp.solutions.drawing_utils
         mp_holistic = mp.solutions.holistic
 

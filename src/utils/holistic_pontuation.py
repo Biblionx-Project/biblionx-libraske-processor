@@ -22,6 +22,9 @@ class GetScore():
         sum_pose_miss = 0
         sum_left_hand_miss = 0
         sum_right_hand_miss = 0
+        average_pose_miss = 0.0
+        average_left_hand_miss = 0.0
+        average_right_hand_miss = 0.0
         # frameID = str(frameID)
         
         for key, values in body_scheme.items():
@@ -73,6 +76,7 @@ class GetScore():
 
                 average_right_hand_miss = sum_right_hand_miss/len(values) if sum_right_hand_miss < len(values) else 0
                 
+        total_average_miss = 0.0
         if average_left_hand_miss>0 or average_right_hand_miss>0 or average_pose_miss>0:
             total_average_miss = (average_pose_miss*pose_weight + average_left_hand_miss *
                                 hand_weight + average_right_hand_miss*hand_weight)/(pose_weight + hand_weight*2)

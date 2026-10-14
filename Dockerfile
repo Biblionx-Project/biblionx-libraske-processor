@@ -1,5 +1,9 @@
-#FROM python:3.6-slim-stretch
 FROM python:3.12-slim-bookworm
+
+LABEL maintainer="Biblionx Team" \
+      org.opencontainers.image.title="Biblionx Libraske Processor" \
+      org.opencontainers.image.description="Biblionx sign pose and motion processing worker" \
+      org.opencontainers.image.vendor="Biblionx"
 
 COPY . /mediapipe/
 
