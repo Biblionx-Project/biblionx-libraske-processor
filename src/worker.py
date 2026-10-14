@@ -56,7 +56,7 @@ class Worker:
 
             results, video_id, frame_id, session_id = self.__holistic_process(body)
 
-            print(f"vide-id: {video_id}")
+            print(f"video-id: {video_id}")
 
             score = self.__score_eval.get_score(
                 results, video_id, frame_id)

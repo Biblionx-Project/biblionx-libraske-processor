@@ -33,7 +33,7 @@ class HolisticCallback():
 
         with mp_holistic.Holistic(static_image_mode=True) as holistic:
 
-            print("entreeeeei")
+            print("Processing frame with MediaPipe Holistic")
 
             # image = cv2.imread(image)
 
